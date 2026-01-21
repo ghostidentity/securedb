@@ -44,4 +44,6 @@ wget -O initializer.deb https://github.com/ghostidentity/securedb/raw/main/initi
    ```
 
 ## 🛠️ Requirements
-- **Ubuntu 24.04** (Recommended) or Debian-based systems.
+- **Fresh VM**: Best installed on a new Ubuntu/Debian instance.
+- **Clean State**: Ensure PostgreSQL 18 is **not** already installed/configured to avoid conflicts.
+- **OS**: **Ubuntu 24.04** (Recommended) or Debian-based systems.
