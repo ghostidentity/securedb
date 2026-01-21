@@ -8,6 +8,14 @@ Modern database attacks often involve exploiting misconfigured instances to inst
 - **Network Cloaking**: Ensuring the database is invisible to external scans (localhost-only).
 - **Audit Trails**: Catching early-stage DDL injections before they can escalate.
 
+### 🛡️ The Cryptominer Kill Chain Defeated
+| Stage | Attacker Action | Our Defense | Status |
+| :--- | :--- | :--- | :--- |
+| **Ingress** | Scan & Brute Force | Localhost Binding + 99-Char Password | ⛔ **BLOCKED** |
+| **Execution** | SQL-to-Shell | Non-Superuser Role Enforcement | ⛔ **BLOCKED** |
+| **Download** | Fetch XMRig Miner | Binary ACLs (No curl/wget for postgres) | ⛔ **BLOCKED** |
+| **Persistence** | Create Backdoor | No-Login Shell (/usr/sbin/nologin) | ⛔ **BLOCKED** |
+
 ## 🛡️ Key Security Features
 - **Network Isolation**: Forces PostgreSQL to listen only on `localhost`.
 - **Encryption**: Enforces **SCRAM-SHA-256** authentication and **TLSv1.3** for all connections.
